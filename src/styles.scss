@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+
+*{
+  font-family: 'Krona One', sans-serif;
+}
+
+html, body{
+  margin: 0;
+  padding: 0;
+}
+
+.btn-link{
+  text-decoration: none !important;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
