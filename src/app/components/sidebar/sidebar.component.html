@@ -1,7 +1,7 @@
 <section class="sidebar-container">
-  <section class="profile-data" >
-    <img [src]="" alt="user_picture">
-    <h2>User Name</h2>
+  <section class="profile-data" *ngIf="auth.user$ | async as user">
+    <img [src]="user.picture" alt="">
+    <h2>{{ user.name }}</h2>
   </section>
   <section class="navigation-buttons">
     <ul>
