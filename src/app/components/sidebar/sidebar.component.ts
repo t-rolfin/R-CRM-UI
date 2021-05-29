@@ -10,10 +10,8 @@ export class SidebarComponent implements OnInit {
 
   constructor(public auth: AuthService) { }
 
-  profileJson: string = '';
 
   ngOnInit(): void {
-    this.auth.user$.subscribe(x => this.profileJson = JSON.stringify(x));
   }
 
 }
