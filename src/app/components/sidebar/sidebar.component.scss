@@ -28,6 +28,7 @@
 
   .navigation-buttons{
 
+
     ul{
       list-style: none;
       text-align: center;
@@ -35,6 +36,12 @@
       padding: 0;
 
       li{
+
+        i{
+          font-size: 2rem;
+          width: 100%;
+        }
+
         margin: 10px 0;
         a{
           text-decoration: none;
