@@ -14,7 +14,10 @@ export class NavbarComponent implements OnInit {
     @Inject(DOCUMENT) private doc: Document
     ) { }
 
+  profileJson: string = '';
+
   ngOnInit(): void {
+    this.auth.user$.subscribe(x => this.profileJson = JSON.stringify(x));
   }
 
   public loginWithRedirect(): void {

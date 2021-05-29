@@ -5,7 +5,7 @@ import { AuthLayoutRoutes } from './auth-layout.routing';
 import { AuthLayoutComponent } from './auth-layout.component';
 import { SidebarComponent } from '../../components/sidebar/sidebar.component';
 import { RouterModule } from '@angular/router';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+import { NgbModule, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap'
 
 
 @NgModule({
@@ -16,7 +16,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
   imports: [
     RouterModule.forChild(AuthLayoutRoutes),
     CommonModule,
-    NgbModule
+    NgbModule,
+    NgbDropdownModule
   ]
 })
 export class AuthLayoutModule { }
