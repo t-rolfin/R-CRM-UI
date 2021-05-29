@@ -10,8 +10,12 @@
 
   </div>
 
-  <div class="auth-user-container">
+  <div class="auth-user-container" *ngIf="(auth.isAuthenticated$ | async) === false">
     <a routerLink="/dashboard" class="login-button">LogIn</a>
+  </div>
+
+  <div class="auth-user-container" *ngIf="auth.isAuthenticated$ | async">
+    <a (click)="logout()" class="login-button">LogOut</a>
   </div>
 
 </nav>
