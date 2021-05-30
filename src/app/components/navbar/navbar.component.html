@@ -14,17 +14,6 @@
     <a routerLink="/dashboard" class="login-button">LogIn</a>
   </div>
 
-  <div class="auth-user-container"  *ngIf="auth.user$ | async as user">
-    <div ngbDropdown class="d-inline-block">
-      <img [src]="user.picture" alt="user_picture" id="dropdownBasic1" ngbDropdownToggle>
-      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-        <span>{{ user.name }}</span>
-        <button ngbDropdownItem>Settings</button>
-        <button (click)="logout()" ngbDropdownItem class="login-button">LogOut</button>
-      </div>
-    </div>
-  </div>
-
 </nav>
 
 
