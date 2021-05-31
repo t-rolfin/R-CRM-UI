@@ -7,12 +7,16 @@ import { SidebarComponent } from '../../components/sidebar/sidebar.component';
 import { RouterModule } from '@angular/router';
 import { NgbModule, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap'
 import { ProfileNavigationComponent } from '../../components/profile-navigation/profile-navigation.component';
+import { LeadFormComponent } from '../../components/lead-form/lead-form.component';
+import { LeadCreationComponent } from '../../pages/lead-creation/lead-creation.component';
 
 @NgModule({
   declarations: [
     AuthLayoutComponent,
     SidebarComponent,
-    ProfileNavigationComponent
+    ProfileNavigationComponent,
+    LeadFormComponent,
+    LeadCreationComponent
   ],
   imports: [
     RouterModule.forChild(AuthLayoutRoutes),

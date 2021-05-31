@@ -9,11 +9,12 @@ import { AuthModule } from '@auth0/auth0-angular';
 import { environment as env } from '../environments/environment';
 import { PresentationComponent } from './pages/presentation/presentation.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    PresentationComponent
+    PresentationComponent,
   ],
   imports: [
     BrowserModule,

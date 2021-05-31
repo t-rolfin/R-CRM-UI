@@ -5,7 +5,6 @@ import { LeadsComponent } from '../../pages/leads/leads.component';
 import { StatisticsComponent } from '../../pages/statistics/statistics.component';
 import { LeadCreationComponent } from '../../pages/lead-creation/lead-creation.component';
 
-
 export const AuthLayoutRoutes: Routes =
 [
   { path: '', component: DashboardComponent },
