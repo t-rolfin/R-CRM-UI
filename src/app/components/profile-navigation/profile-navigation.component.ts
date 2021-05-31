@@ -1,16 +1,18 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  selector: 'app-profile-navigation',
+  templateUrl: './profile-navigation.component.html',
+  styleUrls: ['./profile-navigation.component.scss']
 })
-export class NavbarComponent implements OnInit {
+export class ProfileNavigationComponent implements OnInit {
 
   constructor(
     public auth: AuthService,
+    public router: Router,
     @Inject(DOCUMENT) private doc: Document
     ) { }
 
@@ -27,5 +29,4 @@ export class NavbarComponent implements OnInit {
   logout(): void {
     this.auth.logout({ returnTo: this.doc.location.origin });
   }
-
 }

@@ -1,7 +1,37 @@
 .main{
   width: 100%;
-  height: calc(100vh - 65px);
+  height: 100vh;
   display: grid;
-  grid-template-columns: 100px 0px auto;
-  grid-template-rows: calc(100vh - 65px);
+  grid-template-columns: 100px  auto;
+  grid-template-rows: 100vh;
+  background-color: rgb(240, 238, 243);
+  overflow: hidden;
+
+.wrapper{
+
+  overflow: auto;
+
+    .dashboard-main{
+      min-height: calc(100vh - 91px);
+      margin: 7px;
+      background-color: white;
+      padding: 7px;
+    }
+
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #182444;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #374a7e;
+    }
+  }
 }

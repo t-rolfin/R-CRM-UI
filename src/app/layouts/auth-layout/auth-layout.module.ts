@@ -6,18 +6,20 @@ import { AuthLayoutComponent } from './auth-layout.component';
 import { SidebarComponent } from '../../components/sidebar/sidebar.component';
 import { RouterModule } from '@angular/router';
 import { NgbModule, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap'
-
+import { ProfileNavigationComponent } from '../../components/profile-navigation/profile-navigation.component';
 
 @NgModule({
   declarations: [
     AuthLayoutComponent,
-    SidebarComponent
+    SidebarComponent,
+    ProfileNavigationComponent
   ],
   imports: [
     RouterModule.forChild(AuthLayoutRoutes),
     CommonModule,
     NgbModule,
-    NgbDropdownModule
+    NgbDropdownModule,
   ]
 })
+
 export class AuthLayoutModule { }
