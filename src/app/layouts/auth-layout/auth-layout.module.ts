@@ -5,13 +5,14 @@ import { AuthLayoutRoutes } from './auth-layout.routing';
 import { AuthLayoutComponent } from './auth-layout.component';
 import { SidebarComponent } from '../../components/sidebar/sidebar.component';
 import { RouterModule } from '@angular/router';
-import { NgbModule, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap'
+import { NgbModule, NgbDropdownModule, NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap'
 import { ProfileNavigationComponent } from '../../components/profile-navigation/profile-navigation.component';
 import { LeadFormComponent } from '../../components/lead-form/lead-form.component';
 import { LeadCreationComponent } from '../../pages/lead-creation/lead-creation.component';
 import { LeadsFilterComponent } from '../../components/leads-filter/leads-filter.component';
 import { LeadsComponent } from '../../pages/leads/leads.component';
 import { LeadsListComponent } from '../../components/leads-list/leads-list.component';
+import { LeadDetailsComponent } from '../../pages/lead-details/lead-details.component';
 
 
 @NgModule({
@@ -23,13 +24,15 @@ import { LeadsListComponent } from '../../components/leads-list/leads-list.compo
     LeadCreationComponent,
     LeadsFilterComponent,
     LeadsComponent,
-    LeadsListComponent
+    LeadsListComponent,
+    LeadDetailsComponent
   ],
   imports: [
     RouterModule.forChild(AuthLayoutRoutes),
     CommonModule,
     NgbModule,
     NgbDropdownModule,
+    NgbAccordionModule
   ]
 })
 

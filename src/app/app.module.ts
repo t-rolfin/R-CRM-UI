@@ -13,7 +13,7 @@ import { PresentationComponent } from './pages/presentation/presentation.compone
   declarations: [
     AppComponent,
     DashboardComponent,
-    PresentationComponent
+    PresentationComponent,
   ],
   imports: [
     BrowserModule,
