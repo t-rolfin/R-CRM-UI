@@ -1,0 +1,25 @@
+.notes-wrapper{
+  width: 100%;
+  height: 100%;
+  height: fit-content;
+
+  .note-content{
+    padding: 10px;
+    margin-bottom: 20px;
+
+    .note-control{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #dee2e6 ;
+    }
+
+  }
+
+  .add-note-button{
+    bottom: 0px;
+    border: none;
+  }
+}

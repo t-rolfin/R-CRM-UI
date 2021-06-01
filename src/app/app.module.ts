@@ -8,6 +8,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthModule } from '@auth0/auth0-angular';
 import { environment as env } from '../environments/environment';
 import { PresentationComponent } from './pages/presentation/presentation.component';
+import { NotesListComponent } from './components/notes-list/notes-list.component';
+import { ClientDetailsComponent } from './components/client-details/client-details.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [

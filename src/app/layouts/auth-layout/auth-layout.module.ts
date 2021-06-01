@@ -13,7 +13,10 @@ import { LeadsFilterComponent } from '../../components/leads-filter/leads-filter
 import { LeadsComponent } from '../../pages/leads/leads.component';
 import { LeadsListComponent } from '../../components/leads-list/leads-list.component';
 import { LeadDetailsComponent } from '../../pages/lead-details/lead-details.component';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+import { NotesListComponent } from 'src/app/components/notes-list/notes-list.component';
+import { ClientDetailsComponent } from 'src/app/components/client-details/client-details.component';
+import { ModalComponent } from 'src/app/components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -25,11 +28,15 @@ import { LeadDetailsComponent } from '../../pages/lead-details/lead-details.comp
     LeadsFilterComponent,
     LeadsComponent,
     LeadsListComponent,
-    LeadDetailsComponent
+    LeadDetailsComponent,
+    NotesListComponent,
+    ClientDetailsComponent,
+    ModalComponent
   ],
   imports: [
     RouterModule.forChild(AuthLayoutRoutes),
     CommonModule,
+    FontAwesomeModule,
     NgbModule,
     NgbDropdownModule,
     NgbAccordionModule

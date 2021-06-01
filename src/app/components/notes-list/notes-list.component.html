@@ -1,0 +1,26 @@
+<div class="notes-wrapper" >
+  <div  class="note-content border shadow-sm rounded">
+    <div class="note-control">
+
+      <app-modal modalName="Edit note"
+        [buttonIcon]="modalButtonIcon" >
+
+        <form>
+          <textarea class="textarea--style-6" name='content' ></textarea>
+        </form>
+
+      </app-modal>
+
+      <fa-icon [icon]="deleteButtonIcon" ></fa-icon>
+    </div>
+    Content
+  </div>
+</div>
+
+<app-modal modalName="Add note" buttonName="Add Note" >
+
+<form>
+  <textarea name='content' ></textarea>
+</form>
+
+</app-modal>
