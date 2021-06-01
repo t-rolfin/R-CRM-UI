@@ -9,6 +9,10 @@ import { NgbModule, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap'
 import { ProfileNavigationComponent } from '../../components/profile-navigation/profile-navigation.component';
 import { LeadFormComponent } from '../../components/lead-form/lead-form.component';
 import { LeadCreationComponent } from '../../pages/lead-creation/lead-creation.component';
+import { LeadsFilterComponent } from '../../components/leads-filter/leads-filter.component';
+import { LeadsComponent } from '../../pages/leads/leads.component';
+import { LeadsListComponent } from '../../components/leads-list/leads-list.component';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +20,10 @@ import { LeadCreationComponent } from '../../pages/lead-creation/lead-creation.c
     SidebarComponent,
     ProfileNavigationComponent,
     LeadFormComponent,
-    LeadCreationComponent
+    LeadCreationComponent,
+    LeadsFilterComponent,
+    LeadsComponent,
+    LeadsListComponent
   ],
   imports: [
     RouterModule.forChild(AuthLayoutRoutes),
