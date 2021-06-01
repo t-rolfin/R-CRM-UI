@@ -1,0 +1,43 @@
+<div class="details-container ">
+
+  <div class="lead-status-date border rounded shadow-sm">
+
+    <div > Closed as:  </div>
+    <ng-template #openStage >Stage: </ng-template>
+
+    <div>Receved: </div>
+
+    <div >
+      Closed at:
+    </div>
+
+  </div>
+
+  <div class="notes-container border shadow-sm rounded" >
+    <app-notes-list></app-notes-list>
+  </div>
+
+  <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0"  >
+    <ngb-panel title="Lead Details" id="ngb-panel-0" >
+      <ng-template ngbPanelContent>
+        <p></p>
+        <hr>
+        <h5>Delivary Address: </h5>
+        <hr>
+        <span class="h5" >Value:   </span>
+        <input hidden type="number" >
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel title="Client Details" >
+      <ng-template ngbPanelContent>
+        <app-client-details></app-client-details>
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
+
+</div>
+
+<ng-template #loading >
+  Loading...
+</ng-template>
+

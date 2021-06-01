@@ -1,0 +1,73 @@
+<div class="page-wrapper">
+  <div class="wrapper wrapper--w900">
+        <div class="card">
+          <div class="card-header h1 p-1">
+            Create Lead
+          </div>
+
+            <form #formEnd  >
+
+              <div class="form-row">
+                <div class="name">Products</div>
+                <div class="value">
+                  <div class="input-group">
+                      <textarea class="textarea--style-6" name="message" placeholder="What products do you need?"
+                      formControlName="products"
+                      [required]="true"
+                      name="products"
+                      ></textarea>
+                    </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                  <div class="name">Phone Number</div>
+                  <div class="value">
+                      <input class="input--style-6" type="number" name="phoneNumber"
+                        required="true"
+                        formControlName="phoneNumber"
+                      >
+                  </div>
+              </div>
+
+              <div class="form-row">
+                <div class="name">Delivary Address</div>
+                <div class="value">
+                    <input class="input--style-6" type="text" name="full_name"
+                      required="true"
+                      formControlName="delivaryAddress"
+                    >
+                </div>
+            </div>
+
+              <div class="form-row">
+                  <div class="name">Email address</div>
+                  <div class="value">
+                      <div class="input-group">
+                          <input class="input--style-6" type="email" name="email" placeholder="example@email.com"
+                            required="true"
+                            formControlName="emailAddress"
+                          >
+                      </div>
+                  </div>
+              </div>
+
+              <div class="form-row">
+                  <div class="name">Upload Image</div>
+                  <div class="value">
+                      <div class="input-group js-input-file">
+                          <input class="input-file" type="file" name="file_cv" id="file">
+                          <label class="label--file" for="file">Choose file</label>
+                          <span class="input-file__info">No file chosen</span>
+                      </div>
+                      <div class="label--desc">Upload an image.</div>
+                  </div>
+              </div>
+
+            </form>
+            <div class="p-2">
+                <button [disabled]=""  class="btn btn--radius-2 btn--blue-2" type="button" > Send Request </button>
+            </div>
+        </div>
+  </div>
+</div>
