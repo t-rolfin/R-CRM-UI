@@ -3,6 +3,22 @@
 
 *{
   font-family: 'Krona One', sans-serif;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #182444;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #374a7e;
+  }
 }
 
 html, body{
@@ -14,6 +30,30 @@ html, body{
 .btn-link{
   text-decoration: none !important;
 }
+
+.textarea-style-0 {
+  background: transparent;
+  line-height: 38px;
+  border: 1px solid #cccccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  color: #666;
+  font-size: 15px;
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  padding: 0 20px;
+  width: 100%;
+  min-height: 150px;
+  resize: none;
+
+  &:focus{
+    outline: none;
+  }
+}
+
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';

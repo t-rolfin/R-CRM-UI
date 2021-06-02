@@ -14,7 +14,31 @@
   </div>
 
   <div class="notes-container border shadow-sm rounded" >
-    <app-notes-list></app-notes-list>
+
+    <ul ngbNav #nav="ngbNav" activeId="notes" class="nav-tabs" >
+
+      <li ngbNavItem="notes" >
+        <a ngbNavLink>
+          <i class="fas fa-sticky-note"></i>
+        </a>
+        <ng-template ngbNavContent>
+          <app-notes-list></app-notes-list>
+        </ng-template>
+      </li>
+
+      <li [ngbNavItem]="2">
+        <a ngbNavLink>
+          <i class="fas fa-cog"></i>
+        </a>
+        <ng-template ngbNavContent>
+
+        </ng-template>
+      </li>
+
+    </ul>
+
+    <div [ngbNavOutlet]="nav" class="mt-2"></div>
+
   </div>
 
   <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0"  >
