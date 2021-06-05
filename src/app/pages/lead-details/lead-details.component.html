@@ -2,42 +2,17 @@
 
   <div class="lead-status-date border rounded shadow-sm">
 
-    <div > Closed as:  </div>
+    <div class="alert alert-success p-1 mb-0 " > New </div>
+
     <ng-template #openStage >Stage: </ng-template>
 
-    <div>Receved: </div>
-
-    <div >
-      Closed at:
-    </div>
-
-  </div>
-
-  <div class="notes-container border shadow-sm rounded" >
-
-    <ul ngbNav #nav="ngbNav" activeId="notes" class="nav-tabs" >
-
-      <li ngbNavItem="notes" >
-        <a ngbNavLink>
-          <i class="fas fa-sticky-note"></i>
-        </a>
-        <ng-template ngbNavContent>
-          <app-notes-list></app-notes-list>
-        </ng-template>
-      </li>
-
-      <li [ngbNavItem]="2">
-        <a ngbNavLink>
-          <i class="fas fa-cog"></i>
-        </a>
-        <ng-template ngbNavContent>
-
-        </ng-template>
-      </li>
-
-    </ul>
-
-    <div [ngbNavOutlet]="nav" class="mt-2"></div>
+    <i class="fas fa-info"
+    ngbPopover="
+    Receved date: 01.07.2021
+    Close Date: 10.07.2021
+    "
+    triggers="mouseenter:mouseleave"
+    popoverTitle="More Details" placement="left" ></i>
 
   </div>
 

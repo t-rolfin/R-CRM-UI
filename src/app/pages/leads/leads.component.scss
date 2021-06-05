@@ -36,5 +36,26 @@
         }
       }
     }
+
+    .assign-control{
+      margin: 0px 10px;
+      font-size: 1.2rem;
+      display: flex;
+      flex-direction: row-reverse;
+      appearance: none !important;
+
+      &:hover{
+        cursor: pointer;
+      }
+
+      .d-inline-block{
+        i{
+          &::after{
+            display: none;
+          }
+        }
+      }
+
+    }
   }
 }
