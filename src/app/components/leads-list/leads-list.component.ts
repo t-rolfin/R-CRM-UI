@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-leads-list',
@@ -9,7 +9,13 @@ export class LeadsListComponent implements OnInit {
 
   constructor() { }
 
+  @Output() onDetails: EventEmitter<string> = new EventEmitter();
+
   ngOnInit(): void {
+  }
+
+  expend(leadId: string){
+    this.onDetails.emit(leadId);
   }
 
 }
