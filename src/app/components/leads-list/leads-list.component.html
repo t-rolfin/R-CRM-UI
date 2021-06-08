@@ -2,17 +2,8 @@
 
   <table class="table table-striped">
 
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Phone Number</th>
-        <th scope="col">Status</th>
-        <th scope="col">Details</th>
-      </tr>
-    </thead>
-
     <tbody>
-      <tr routerLink="myId" >
+      <tr (click)="expend('testLeadId')" >
         <th scope="row">id</th>
         <td>name</td>
         <td>area</td>
@@ -22,7 +13,7 @@
 
   </table>
 
-  <div class="d-flex justify-content-between p-2">
+  <div class="d-flex justify-content-between p-2 mb-0 h-100">
 
     <ngb-pagination >
     </ngb-pagination>

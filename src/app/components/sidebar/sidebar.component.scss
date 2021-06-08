@@ -1,11 +1,12 @@
 .sidebar-container
 {
   height: 100%;
-  width: 100%;
+  width: fit-content;
   background-color: #182444;
   display: flex;
   flex-direction: column;
   user-select: none;
+  padding: 10px;
 
   .logo-container{
     width: 100%;

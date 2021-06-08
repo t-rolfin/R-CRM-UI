@@ -2,19 +2,18 @@
 
   <div class="lead-status-date border rounded shadow-sm">
 
-    <div > Closed as:  </div>
+    <div class="alert alert-success p-1 mb-0 " > New </div>
+
     <ng-template #openStage >Stage: </ng-template>
 
-    <div>Receved: </div>
+    <i class="fas fa-info"
+    ngbPopover="
+    Receved date: 01.07.2021
+    Close Date: 10.07.2021
+    "
+    triggers="mouseenter:mouseleave"
+    popoverTitle="More Details" placement="left" ></i>
 
-    <div >
-      Closed at:
-    </div>
-
-  </div>
-
-  <div class="notes-container border shadow-sm rounded" >
-    <app-notes-list></app-notes-list>
   </div>
 
   <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0"  >

@@ -1,2 +1,55 @@
-<app-leads-filter></app-leads-filter>
-<app-leads-list></app-leads-list>
+<div class="lead-section-0">
+
+  <div class="leads-container-0">
+    <div class="leads-wrapper">
+      <app-leads-filter></app-leads-filter>
+      <app-leads-list (onDetails)="expendElenent($event)" ></app-leads-list>
+    </div>
+  </div>
+
+  <div #leaddetails style="width: 0px;" class="lead-details-container-0">
+
+    <div class="control">
+      <i class="fas fa-times" (click)="closeDetails()" ></i>
+    </div>
+
+    <div class="assign-control">
+        <div ngbDropdown class="d-inline-block">
+          <i class="fas fa-user-plus" ngbDropdownToggle></i>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <button ngbDropdownItem>Action - 1</button>
+            <button ngbDropdownItem>Another Action</button>
+            <button ngbDropdownItem>Something else is here</button>
+          </div>
+      </div>
+
+    </div>
+
+    <ul ngbNav #nav="ngbNav" activeId="notes" class="nav-tabs"  >
+
+      <li ngbNavItem="notes" >
+        <a ngbNavLink>
+          Lead Card
+        </a>
+        <ng-template ngbNavContent style="padding: 10px; " >
+          <app-lead-details></app-lead-details>
+        </ng-template>
+      </li>
+
+      <li [ngbNavItem]="2">
+        <a ngbNavLink>
+          Updates
+        </a>
+        <ng-template ngbNavContent>
+          <app-notes-list></app-notes-list>
+        </ng-template>
+      </li>
+
+    </ul>
+
+    <div [ngbNavOutlet]="nav" style="margin:10px !important" ></div>
+
+  </div>
+</div>
+
+

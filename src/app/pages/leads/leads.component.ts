@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-leads',
@@ -7,9 +7,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LeadsComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild('leaddetails') leaddetails!: ElementRef<HTMLInputElement>;
+
+  constructor(
+    private renderer: Renderer2,
+    ) { }
 
   ngOnInit(): void {
+  }
+
+  expendElenent(leadId: string){
+    console.log(leadId);
+
+    this.renderer.setStyle(this.leaddetails.nativeElement, "width", "1200px");
+    this.renderer.setStyle(this.leaddetails.nativeElement, "opacity", "1");
+    this.renderer.setStyle(this.leaddetails.nativeElement, "marginLeft", "10px");
+  }
+
+  closeDetails(){
+    this.renderer.setStyle(this.leaddetails.nativeElement, "width", "0px");
+    this.renderer.setStyle(this.leaddetails.nativeElement, "opacity", "0");
+    this.renderer.setStyle(this.leaddetails.nativeElement, "marginLeft", "0px");
   }
 
 }

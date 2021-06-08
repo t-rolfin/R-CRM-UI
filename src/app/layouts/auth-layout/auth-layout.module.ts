@@ -17,6 +17,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 import { NotesListComponent } from 'src/app/components/notes-list/notes-list.component';
 import { ClientDetailsComponent } from 'src/app/components/client-details/client-details.component';
 import { ModalComponent } from 'src/app/components/modal/modal.component';
+import { TextareaAutosizeModule } from 'ngx-textarea-autosize';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ModalComponent } from 'src/app/components/modal/modal.component';
     FontAwesomeModule,
     NgbModule,
     NgbDropdownModule,
-    NgbAccordionModule
+    NgbAccordionModule,
+    TextareaAutosizeModule
   ]
 })
 
