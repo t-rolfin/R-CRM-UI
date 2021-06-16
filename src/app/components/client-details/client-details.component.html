@@ -1,4 +1,4 @@
-<div class="client-details-container">
+<div class="client-details-container" *ngIf="!isLoading; else loader" >
   <div class="wrapper">
       <form action="">
         <div class="form-row">
@@ -29,3 +29,7 @@
       </form>
   </div>
 </div>
+
+<ng-template #loader >
+  <app-loading-animation></app-loading-animation>
+</ng-template>

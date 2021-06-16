@@ -9,6 +9,8 @@ export class ClientDetailsComponent implements OnInit {
 
   constructor() { }
 
+  isLoading: boolean = false;
+
   ngOnInit(): void {
   }
 

@@ -1,13 +1,13 @@
-<div class="leads-list-section">
+<div class="leads-list-section" *ngIf="!isLoading; else loader" >
 
   <table class="table table-striped">
 
     <tbody>
-      <tr (click)="expend('testLeadId')" >
-        <th scope="row">id</th>
-        <td>name</td>
-        <td>area</td>
-        <td>population</td>
+      <tr (click)="expend('testLeadId')" *ngFor="let item of leads"  >
+        <th scope="row">{{ item.id.toString().split('-')[0] }}</th>
+        <td>{{ item.phoneNumber }}</td>
+        <td>{{ item.leadStage }}</td>
+        <td>{{ item.catchLead | date }}</td>
       </tr>
     </tbody>
 
@@ -27,3 +27,7 @@
   </div>
 
 </div>
+
+<ng-template  #loader>
+  <app-loading-animation></app-loading-animation>
+</ng-template>

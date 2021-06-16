@@ -1,26 +1,34 @@
-<div class="notes-wrapper" >
-  <div  class="note-content border shadow-sm rounded">
-    <div class="note-control">
+<div *ngIf="!isLoading; else loader" >
 
-      <app-modal modalName="Edit note"
-        [buttonIcon]="modalButtonIcon" >
+  <div class="notes-wrapper" >
+    <div  class="note-content border shadow-sm rounded">
+      <div class="note-control">
 
-        <form>
-          <textarea autosize class="textarea-style-0" name='content' ></textarea>
-        </form>
+        <app-modal modalName="Edit note"
+          [buttonIcon]="modalButtonIcon" >
 
-      </app-modal>
+          <form>
+            <textarea autosize class="textarea-style-0" name='content' ></textarea>
+          </form>
 
-      <fa-icon [icon]="deleteButtonIcon" ></fa-icon>
+        </app-modal>
+
+        <fa-icon [icon]="deleteButtonIcon" ></fa-icon>
+      </div>
+      Content
     </div>
-    Content
   </div>
+
+  <app-modal modalName="Add note" buttonName="Add Note" >
+
+  <form>
+    <textarea autosize class="textarea-style-0" name='content' ></textarea>
+  </form>
+
+  </app-modal>
+
 </div>
 
-<app-modal modalName="Add note" buttonName="Add Note" >
-
-<form>
-  <textarea autosize class="textarea-style-0" name='content' ></textarea>
-</form>
-
-</app-modal>
+<ng-template #loader >
+  <app-loading-animation></app-loading-animation>
+</ng-template>

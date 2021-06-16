@@ -1,4 +1,4 @@
-<div class="details-container ">
+<div class="details-container" *ngIf="!isLoading; else loader" >
 
   <div class="lead-status-date border rounded shadow-sm">
 
@@ -36,7 +36,7 @@
 
 </div>
 
-<ng-template #loading >
-  Loading...
+<ng-template #loader >
+  <app-loading-animation></app-loading-animation>
 </ng-template>
 

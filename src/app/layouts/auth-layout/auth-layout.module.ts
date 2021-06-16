@@ -18,6 +18,7 @@ import { NotesListComponent } from 'src/app/components/notes-list/notes-list.com
 import { ClientDetailsComponent } from 'src/app/components/client-details/client-details.component';
 import { ModalComponent } from 'src/app/components/modal/modal.component';
 import { TextareaAutosizeModule } from 'ngx-textarea-autosize';
+import { LoadingAnimationComponent } from '../../components/loading-animation/loading-animation.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { TextareaAutosizeModule } from 'ngx-textarea-autosize';
     LeadDetailsComponent,
     NotesListComponent,
     ClientDetailsComponent,
-    ModalComponent
+    ModalComponent,
+    LoadingAnimationComponent
   ],
   imports: [
     RouterModule.forChild(AuthLayoutRoutes),
