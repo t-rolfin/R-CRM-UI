@@ -1,4 +1,4 @@
-<div class="leads-list-section">
+<div class="leads-list-section" *ngIf="!isLoading; else loader" >
 
   <table class="table table-striped">
 
@@ -27,3 +27,7 @@
   </div>
 
 </div>
+
+<ng-template  #loader>
+  <app-loading-animation></app-loading-animation>
+</ng-template>

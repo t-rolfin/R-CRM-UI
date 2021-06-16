@@ -9,6 +9,8 @@ export class LeadsListComponent implements OnInit {
 
   constructor() { }
 
+  isLoading:boolean = false;
+
   @Output() onDetails: EventEmitter<string> = new EventEmitter();
 
   ngOnInit(): void {

@@ -12,6 +12,7 @@ export class NotesListComponent implements OnInit {
 
   modalButtonIcon = faPen;
   deleteButtonIcon = faTrashAlt;
+  isLoading:boolean = false;
 
   ngOnInit(): void {
   }
