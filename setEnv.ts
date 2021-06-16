@@ -51,6 +51,7 @@ const environmentFileContent = `
     redirectUrl: '${ process.env.REDIRECT_URL }',
     scope: '${ process.env.SCOPE }',
     domain: '${ process.env.DOMAIN }',
+    responseType: '${ process.env.RESPONSE_TYPE }'
   };
 `;
 
