@@ -1,4 +1,6 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Lead } from 'src/app/models/leadModel';
+import { LeadService } from 'src/app/services/lead-service.service';
 
 @Component({
   selector: 'app-leads',
@@ -11,7 +13,7 @@ export class LeadsComponent implements OnInit {
 
   constructor(
     private renderer: Renderer2,
-    ) { }
+    ) {}
 
   ngOnInit(): void {
   }
