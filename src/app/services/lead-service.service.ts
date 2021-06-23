@@ -5,6 +5,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { environment as env } from 'src/environments/environment';
 import { Lead } from '../models/leadModel';
+import { NoteCollectionModel } from '../models/noteCollectionModel';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,11 @@ export class LeadService {
   public getAllLeads() : Observable<Lead[]>
   {
      return this.http.get<Lead[]>(`${env.audience}/leads`)
+    .pipe(retry(3), catchError(this.processError));
+  }
+
+  public getNotesForLead(leadId: string): Observable<NoteCollectionModel>{
+    return this.http.get<NoteCollectionModel>(`${ env.audience }leads/${ leadId }/notes`)
     .pipe(retry(3), catchError(this.processError));
   }
 
