@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Guid } from 'guid-typescript';
 import { Lead } from 'src/app/models/leadModel';
 import { LeadService } from 'src/app/services/lead-service.service';
 
@@ -18,7 +19,7 @@ export class LeadsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  expendElenent(leadId: string){
+  expendElenent(leadId: Guid){
     console.log(leadId);
 
     this.renderer.setStyle(this.leaddetails.nativeElement, "width", "1200px");

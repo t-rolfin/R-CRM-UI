@@ -21,7 +21,7 @@ export class LeadService {
   }
 
   public getNotesForLead(leadId: string): Observable<NoteCollectionModel>{
-    return this.http.get<NoteCollectionModel>(`${ env.audience }leads/${ leadId }/notes`)
+    return this.http.get<NoteCollectionModel>(`${ env.audience }/leads/${ leadId }/notes`)
     .pipe(retry(3), catchError(this.processError));
   }
 

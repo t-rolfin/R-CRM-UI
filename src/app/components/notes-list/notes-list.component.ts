@@ -16,7 +16,7 @@ export class NotesListComponent implements OnInit {
   modalButtonIcon = faPen;
   deleteButtonIcon = faTrashAlt;
   isLoading:boolean = false;
-  noteContent: string = "";
+  public noteContent: string = "";
 
   constructor(
     public http: HttpClient,
@@ -29,11 +29,37 @@ export class NotesListComponent implements OnInit {
   public model: NoteCollectionModel;
 
   ngOnInit(): void {
-    this.route.params.subscribe(params =>{
-      this.service.getNotesForLead(params["id"])
+    this.route.queryParams.subscribe(params =>{
+      this.service.getNotesForLead(params["leadId"])
       .subscribe(response => {
         this.model = response;
       })
     })
   }
+
+  saveNote()
+  {
+      let formData = new FormData();
+      formData.append('note', this.noteContent);
+
+      var link = this.model.links.find(x => x.rel === 'create-note')?.href;
+
+      if(link != null){
+        this.http.post<NoteModel>(link, formData, { observe: 'response'  })
+        .subscribe(response => {
+          if(response.ok){
+            if(this.model.notes === null)
+            {
+              this.model.notes = new Array<NoteModel>();
+            }
+            if(response.body != null){
+              this.model.notes.push(response.body);
+              this.noteContent = '';
+            }
+          }
+        });
+      }
+
+  }
+
 }

@@ -19,6 +19,7 @@ import { ClientDetailsComponent } from 'src/app/components/client-details/client
 import { ModalComponent } from 'src/app/components/modal/modal.component';
 import { TextareaAutosizeModule } from 'ngx-textarea-autosize';
 import { LoadingAnimationComponent } from '../../components/loading-animation/loading-animation.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { LoadingAnimationComponent } from '../../components/loading-animation/lo
     NgbModule,
     NgbDropdownModule,
     NgbAccordionModule,
-    TextareaAutosizeModule
+    TextareaAutosizeModule,
+    FormsModule
   ]
 })
 

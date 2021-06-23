@@ -1,7 +1,7 @@
 <div *ngIf="!isLoading; else loader" >
 
   <div class="notes-wrapper" >
-    <div  class="note-content border shadow-sm rounded">
+    <div *ngFor="let note of model.notes"  class="note-content border shadow-sm rounded">
       <div class="note-control">
 
         <app-modal modalName="Edit note"
@@ -15,14 +15,15 @@
 
         <fa-icon [icon]="deleteButtonIcon" ></fa-icon>
       </div>
-      Content
+      {{ note?.content }}
     </div>
   </div>
 
-  <app-modal modalName="Add note" buttonName="Add Note" >
+  <app-modal modalName="Add note" buttonName="Add Note"
+   (onSubmit)="saveNote()" >
 
   <form>
-    <textarea autosize class="textarea-style-0" name='content' ></textarea>
+    <textarea autosize [(ngModel)]="noteContent" class="textarea-style-0" name='noteContent' ></textarea>
   </form>
 
   </app-modal>
