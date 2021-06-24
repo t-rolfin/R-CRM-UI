@@ -25,6 +25,11 @@ export class LeadService {
     .pipe(retry(3), catchError(this.processError));
   }
 
+  public deleteNoteForLead(link: string) : Observable<any>{
+    return this.http.delete<string>(link, { observe: "response" })
+    .pipe(catchError(this.processError));
+  }
+
   processError(err: any) {
     let message = '';
     if(err.error instanceof ErrorEvent) {

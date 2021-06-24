@@ -13,7 +13,7 @@
 
         </app-modal>
 
-        <fa-icon [icon]="deleteButtonIcon" ></fa-icon>
+        <fa-icon [icon]="deleteButtonIcon" (click)="deleteNote(note.id)" ></fa-icon>
       </div>
       {{ note?.content }}
     </div>

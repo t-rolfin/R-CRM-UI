@@ -62,4 +62,24 @@ export class NotesListComponent implements OnInit {
 
   }
 
+  deleteNote(noteId: string){
+
+    var note = this.model.notes.find(x => x.id === noteId);
+
+    if(note != null)
+    {
+      var link = note.links.find(x => x.rel === 'delete-note')?.href;
+    }
+
+    if(link != null && note != undefined){
+      this.service.deleteNoteForLead(link)
+      .subscribe((x: Response) => {
+        if(x.ok){
+            var index = this.model.notes.indexOf(note as NoteModel);
+            this.model.notes.splice(index, 1);
+        }
+      })
+    }
+  }
+
 }
