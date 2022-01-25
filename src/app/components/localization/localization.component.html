@@ -1,0 +1,7 @@
+<ng-container >
+  <select (change)="setLanguage()" [value]="selectLanguage.toLowerCase()" name="selectLanguage" [(ngModel)]="selectLanguage" id="">
+    <ng-container *ngFor="let item of languages">
+      <option value="{{ item.toLowerCase() }}">{{item}}</option>
+    </ng-container>
+  </select>
+</ng-container>

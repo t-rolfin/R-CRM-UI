@@ -1,5 +1,12 @@
 {
   "lead":{
-    "leadCreation": "Lead Creation"
+    "leadCreation": "Create Lead"
+  },
+  "createLead": {
+    "products": "Products"
+  },
+  "sidebar":{
+    "home":"Home",
+    "statistics": "Statistics"
   }
 }

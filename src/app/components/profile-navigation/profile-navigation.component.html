@@ -4,6 +4,10 @@
     <xng-breadcrumb separator="/"></xng-breadcrumb>
   </div>
 
+  <div>
+    <app-localization></app-localization>
+  </div>
+
   <div class="auth-user-container"  *ngIf="auth.user$ | async as user">
     <div ngbDropdown class="user-details" id="dropdownBasic1" ngbDropdownToggle >
 

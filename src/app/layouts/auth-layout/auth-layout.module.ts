@@ -22,6 +22,7 @@ import { LoadingAnimationComponent } from '../../components/loading-animation/lo
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BreadcrumbModule, BreadcrumbService } from 'xng-breadcrumb';
 import { TranslateModule } from '@ngx-translate/core';
+import { LocalizationComponent } from 'src/app/components/localization/localization.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { TranslateModule } from '@ngx-translate/core';
     ClientDetailsComponent,
     ModalComponent,
     LoadingAnimationComponent,
-    LeadFormComponent
+    LeadFormComponent,
+    LocalizationComponent
   ],
   imports: [
     RouterModule.forChild(AuthLayoutRoutes),

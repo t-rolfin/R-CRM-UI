@@ -1,5 +1,12 @@
 {
   "lead":{
-    "leadCreation": "Creare Lead"
+    "leadCreation": "Adaugă Lead"
+  },
+  "createLead": {
+    "products": "Produse"
+  },
+  "sidebar":{
+    "home":"Acasă",
+    "statistics": "Statistici"
   }
 }
