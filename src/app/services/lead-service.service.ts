@@ -4,6 +4,7 @@ import { AuthService } from '@auth0/auth0-angular';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { environment as env } from 'src/environments/environment';
+import { leadCreationModel } from '../models/leadCreationModel';
 import { Lead } from '../models/leadModel';
 
 @Injectable({
@@ -15,8 +16,14 @@ export class LeadService {
 
   public getAllLeads() : Observable<Lead[]>
   {
-     return this.http.get<Lead[]>(`${env.audience}/leads`)
+     return this.http.get<Lead[]>(`${env.apiUrl}/leads`)
     .pipe(retry(3), catchError(this.processError));
+  }
+
+  public createLead(leadModel: leadCreationModel){
+    console.log(`${env.apiUrl}/leads/create`);
+      this.http.post(`${env.apiUrl}/leads/create`, leadModel)
+      .subscribe(x=> console.log(x));
   }
 
   processError(err: any) {

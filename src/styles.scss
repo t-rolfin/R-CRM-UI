@@ -25,10 +25,15 @@ html, body{
   margin: 0;
   padding: 0;
   overflow: hidden;
+  font-size: 12px;
 }
 
 .btn-link{
   text-decoration: none !important;
+}
+
+.btn:disabled:hover{
+  cursor: not-allowed;
 }
 
 .textarea-style-0 {
@@ -52,6 +57,10 @@ html, body{
   &:focus{
     outline: none;
   }
+}
+
+.xng-breadcrumb-trail{
+  margin-bottom: 0 !important;
 }
 
 

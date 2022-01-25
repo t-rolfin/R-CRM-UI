@@ -1,7 +1,7 @@
 <section class="profile-navigation-container">
 
   <div class="route">
-    {{ this.router.url }}
+    <xng-breadcrumb separator="/"></xng-breadcrumb>
   </div>
 
   <div class="auth-user-container"  *ngIf="auth.user$ | async as user">

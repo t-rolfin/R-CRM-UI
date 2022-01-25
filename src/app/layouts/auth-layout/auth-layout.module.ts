@@ -19,13 +19,14 @@ import { ClientDetailsComponent } from 'src/app/components/client-details/client
 import { ModalComponent } from 'src/app/components/modal/modal.component';
 import { TextareaAutosizeModule } from 'ngx-textarea-autosize';
 import { LoadingAnimationComponent } from '../../components/loading-animation/loading-animation.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BreadcrumbModule, BreadcrumbService } from 'xng-breadcrumb';
 
 @NgModule({
   declarations: [
     AuthLayoutComponent,
     SidebarComponent,
     ProfileNavigationComponent,
-    LeadFormComponent,
     LeadCreationComponent,
     LeadsFilterComponent,
     LeadsComponent,
@@ -34,16 +35,23 @@ import { LoadingAnimationComponent } from '../../components/loading-animation/lo
     NotesListComponent,
     ClientDetailsComponent,
     ModalComponent,
-    LoadingAnimationComponent
+    LoadingAnimationComponent,
+    LeadFormComponent
   ],
   imports: [
     RouterModule.forChild(AuthLayoutRoutes),
     CommonModule,
     FontAwesomeModule,
     NgbModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BreadcrumbModule,
     NgbDropdownModule,
     NgbAccordionModule,
     TextareaAutosizeModule
+  ],
+  providers: [
+    BreadcrumbService
   ]
 })
 

@@ -1,58 +1,63 @@
 <div class="page-wrapper">
+  <div class="card-header h3 p-1 border-0" style="text-align: center;">
+    Create Lead
+  </div>
   <div class="wrapper wrapper--w900">
-        <div class="card">
-          <div class="card-header h1 p-1">
-            Create Lead
-          </div>
 
-            <form #formEnd  >
+            <form #formEnd="ngForm" >
 
-              <div class="form-row">
+              <div class="form-row border-0">
                 <div class="name">Products</div>
-                <div class="value">
-                  <div class="input-group">
-                      <textarea class="textarea--style-6" name="message" placeholder="What products do you need?"
-                      formControlName="products"
-                      [required]="true"
-                      name="products"
-                      ></textarea>
-                    </div>
-                </div>
-              </div>
-
-              <div class="form-row">
-                  <div class="name">Phone Number</div>
-                  <div class="value">
-                      <input class="input--style-6" type="number" name="phoneNumber"
-                        required="true"
-                        formControlName="phoneNumber"
-                      >
-                  </div>
-              </div>
-
-              <div class="form-row">
-                <div class="name">Delivary Address</div>
-                <div class="value">
-                    <input class="input--style-6" type="text" name="full_name"
-                      required="true"
-                      formControlName="delivaryAddress"
-                    >
-                </div>
-            </div>
-
-              <div class="form-row">
-                  <div class="name">Email address</div>
                   <div class="value">
                       <div class="input-group">
-                          <input class="input--style-6" type="email" name="email" placeholder="example@email.com"
-                            required="true"
-                            formControlName="emailAddress"
-                          >
+                          <textarea class="textarea--style-6" name="message" placeholder="What products do you need?"
+                          name="products"
+                          required
+                          [(ngModel)]="model.leadProducts"
+                          ></textarea>
+                      </div>
+                </div>
+              </div>
+
+              <div class="form-row border-0">
+                  <div class="name">Phone Number</div>
+                  <div class="value">
+                      <input class="input--style-6" type="text" name="phoneNumber"
+                        [(ngModel)]="model.phoneNumber"
+                        maxlength="10" minlength="10" required #phoneNumber='ngModel'
+                      >
+                      <div style="font-size: 0.6rem;margin-top: 5px" *ngIf="phoneNumber.invalid && phoneNumber.hasError('minlength')">
+                        Numarul de telefon trebuie sa aiba o lungime de 10 cifre!
                       </div>
                   </div>
               </div>
 
-              <div class="form-row">
+              <div class="form-row border-0">
+                <div class="name">Delivary Address</div>
+                <div class="value">
+                    <input class="input--style-6" type="text" name="delivaryAddress"
+                      required="true"
+                      [(ngModel)]="model.delivaryAddress"
+                    >
+                </div>
+              </div>
+
+              <div class="form-row border-0">
+                  <label for="email" class="name">Email address</label>
+                  <div class="value">
+                      <div class="input-group">
+                          <input id="email" class="input--style-6" type="email" name="email" placeholder="example@email.com"
+                            required="true"
+                            [(ngModel)]="model.email"
+                          >
+                      </div>
+                      <div style="font-size: 0.6rem;margin-top: 5px" *ngIf="phoneNumber.invalid && phoneNumber.hasError('minlength')">
+                        Numarul de telefon trebuie sa aiba o lungime de 10 cifre!
+                      </div>
+                  </div>
+              </div>
+
+              <div class="form-row border-0">
                   <div class="name">Upload Image</div>
                   <div class="value">
                       <div class="input-group js-input-file">
@@ -64,10 +69,9 @@
                   </div>
               </div>
 
+              <div class="p-2">
+                  <button [disabled]="!formEnd.valid" class="btn btn--radius-2 btn--blue-2" (click)="CreateLead()" > Create Lead</button>
+              </div>
             </form>
-            <div class="p-2">
-                <button [disabled]=""  class="btn btn--radius-2 btn--blue-2" type="button" > Send Request </button>
-            </div>
-        </div>
   </div>
 </div>

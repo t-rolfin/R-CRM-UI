@@ -9,8 +9,8 @@ import { LeadDetailsComponent } from '../../pages/lead-details/lead-details.comp
 export const AuthLayoutRoutes: Routes =
 [
   { path: '', component: DashboardComponent },
-  { path: 'leads', component: LeadsComponent },
-  { path: 'createlead', component: LeadCreationComponent },
-  { path: 'leads/:id', component: LeadDetailsComponent },
-  { path: 'statistics', component: StatisticsComponent }
+  { path: 'leads', component: LeadsComponent, data: { breadcrumb: { label: 'Leads' } }},
+  { path: 'createlead', component: LeadCreationComponent, data: { breadcrumb: { label: 'Create Lead' } } },
+  { path: 'leads/:id', component: LeadDetailsComponent},
+  { path: 'statistics', component: StatisticsComponent, data: { breadcrumb: { label: 'Statistics' } } }
 ]

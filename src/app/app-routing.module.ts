@@ -12,7 +12,8 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        loadChildren: () => import('./layouts/auth-layout/auth-layout.module').then(m => m.AuthLayoutModule)
+        loadChildren: () => import('./layouts/auth-layout/auth-layout.module').then(m => m.AuthLayoutModule),
+        data: {breadcrumb: { label : "Dashboard" }}
       }
     ]
   }

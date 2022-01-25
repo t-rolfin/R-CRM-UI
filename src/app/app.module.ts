@@ -9,6 +9,8 @@ import { AuthHttpInterceptor, AuthModule } from '@auth0/auth0-angular';
 import { environment as env } from '../environments/environment';
 import { PresentationComponent } from './pages/presentation/presentation.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { BreadcrumbService } from 'xng-breadcrumb';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    FormsModule,
     HttpClientModule,
     AuthModule.forRoot({
       clientId: env.clientId,
@@ -29,11 +32,11 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
       audience: env.audience,
       scope: env.scope,
       httpInterceptor: {
-        allowedList: [ `${env.audience}/*` ]
+        allowedList: [ `${env.apiUrl}/*` ]
       }
     })
   ],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthHttpInterceptor, multi: true }],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthHttpInterceptor, multi: true }, BreadcrumbService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
