@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { leadCreationModel } from 'src/app/models/leadCreationModel';
 import { LeadService } from 'src/app/services/lead-service.service';
-import { BreadcrumbService } from 'xng-breadcrumb';
+import { TranslateService } from '@ngx-translate/core';
+
 
 @Component({
   selector: 'app-lead-form',
@@ -12,7 +13,8 @@ import { BreadcrumbService } from 'xng-breadcrumb';
 export class LeadFormComponent implements OnInit {
 
   constructor(
-    public leadService: LeadService
+    public leadService: LeadService,
+    public translate: TranslateService
     ) { }
 
   public profilerForm: FormGroup = new FormGroup({});

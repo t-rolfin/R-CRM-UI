@@ -21,6 +21,7 @@ import { TextareaAutosizeModule } from 'ngx-textarea-autosize';
 import { LoadingAnimationComponent } from '../../components/loading-animation/loading-animation.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BreadcrumbModule, BreadcrumbService } from 'xng-breadcrumb';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { BreadcrumbModule, BreadcrumbService } from 'xng-breadcrumb';
     BreadcrumbModule,
     NgbDropdownModule,
     NgbAccordionModule,
-    TextareaAutosizeModule
+    TextareaAutosizeModule,
+    TranslateModule
   ],
   providers: [
     BreadcrumbService
