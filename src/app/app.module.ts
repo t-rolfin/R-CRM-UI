@@ -13,35 +13,32 @@ import { FormsModule } from '@angular/forms';
 import { BreadcrumbService } from 'xng-breadcrumb';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HomeLayoutComponent } from './layouts/home-layout/home-layout.component';
+import { LoginComponent } from './home-pages/login/login.component';
+import { HomeLayoutModule } from './layouts/home-layout/home-layout.module';
+import { AuthLayoutModule } from './layouts/auth-layout/auth-layout.module';
+import { AuthTokenInterceptor } from './interceptors/authTokenInterceptor';
+import { AuthGuard } from './guards/AuthGuard';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    DashboardComponent,
-    PresentationComponent
+    AppComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    BrowserModule,
     NgbModule,
     FormsModule,
     HttpClientModule,
+    HomeLayoutModule,
+    AuthLayoutModule,
+    BrowserAnimationsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
-      }
-    }),
-    AuthModule.forRoot({
-      clientId: env.clientId,
-      domain: env.domain,
-      redirectUri: env.redirectUrl,
-      responseType: env.responseType,
-      audience: env.audience,
-      scope: env.scope,
-      httpInterceptor: {
-        allowedList: [ `${env.apiUrl}/*` ]
       }
     })
   ],
@@ -49,8 +46,10 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
     TranslateModule,
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: AuthHttpInterceptor, multi: true },
-    BreadcrumbService],
+    {provide: HTTP_INTERCEPTORS, useClass: AuthTokenInterceptor, multi: true},
+    BreadcrumbService,
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -17,9 +17,11 @@
 
       .dashboard-main{
         min-height: calc(100vh - 91px);
+        max-height: calc(100vh - 91px);
         margin: 7px;
         background-color: white;
         padding: 7px;
+        overflow: auto;
       }
 
       &::-webkit-scrollbar {

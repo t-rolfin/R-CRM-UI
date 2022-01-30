@@ -1,7 +1,9 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '@auth0/auth0-angular';
+import { CurrentUserModel } from 'src/app/models/currentUserModel';
+import { AccountService } from 'src/app/services/account-service.service';
+import { UserService } from 'src/app/services/user-service.service';
 
 @Component({
   selector: 'app-profile-navigation',
@@ -11,22 +13,24 @@ import { AuthService } from '@auth0/auth0-angular';
 export class ProfileNavigationComponent implements OnInit {
 
   constructor(
-    public auth: AuthService,
     public router: Router,
-    @Inject(DOCUMENT) private doc: Document
+    @Inject(DOCUMENT) private doc: Document,
+    private userService: UserService,
+    private accountService: AccountService
     ) { }
 
-  profileJson: string = '';
+  profileJson: CurrentUserModel = new CurrentUserModel();
 
   ngOnInit(): void {
-    this.auth.user$.subscribe(x => this.profileJson = JSON.stringify(x));
+    this.profileJson = this.userService.GetCurrentUser();
   }
 
   public loginWithRedirect(): void {
-    this.auth.loginWithRedirect();
+    //this.auth.loginWithRedirect();
   }
 
   logout(): void {
-    this.auth.logout({ returnTo: this.doc.location.origin });
+    this.accountService.LogOut();
+    this.doc.location.origin;
   }
 }

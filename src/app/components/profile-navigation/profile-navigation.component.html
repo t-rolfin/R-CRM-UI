@@ -8,15 +8,15 @@
     <app-localization></app-localization>
   </div>
 
-  <div class="auth-user-container"  *ngIf="auth.user$ | async as user">
+  <div class="auth-user-container"  *ngIf="profileJson">
     <div ngbDropdown class="user-details" id="dropdownBasic1" ngbDropdownToggle >
 
       <div class="name-and-role">
-        <span>{{ user.name }}</span>
-        <span>Consultant</span>
+        <span>{{ profileJson.Name }}</span>
+        <span>{{ profileJson.Role }}</span>
       </div>
 
-      <img [src]="user.picture" alt="user_picture" >
+      <!--<img [src]="user.picture" alt="user_picture" >-->
 
       <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
         <button ngbDropdownItem>Settings</button>

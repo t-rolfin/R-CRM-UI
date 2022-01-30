@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AuthService } from '@auth0/auth0-angular';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { environment as env } from 'src/environments/environment';
@@ -12,7 +11,7 @@ import { Lead } from '../models/leadModel';
 })
 export class LeadService {
 
-  constructor(public http: HttpClient, public auth: AuthService) { }
+  constructor(public http: HttpClient) { }
 
   public getAllLeads() : Observable<Lead[]>
   {
