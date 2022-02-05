@@ -1,3 +1,4 @@
+import { MatInputModule } from '@angular/material/input';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -23,6 +24,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BreadcrumbModule, BreadcrumbService } from 'xng-breadcrumb';
 import { TranslateModule } from '@ngx-translate/core';
 import { LocalizationComponent } from 'src/app/components/localization/localization.component';
+import { MatSelectModule } from '@angular/material/select'
 
 @NgModule({
   declarations: [
@@ -52,10 +54,15 @@ import { LocalizationComponent } from 'src/app/components/localization/localizat
     NgbDropdownModule,
     NgbAccordionModule,
     TextareaAutosizeModule,
-    TranslateModule
+    TranslateModule,
+    MatInputModule,
+    MatSelectModule
   ],
   providers: [
     BreadcrumbService
+  ],
+  exports: [
+    LocalizationComponent
   ]
 })
 

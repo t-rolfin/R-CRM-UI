@@ -1,4 +1,13 @@
 {
+  "app":{
+    "languageLabel": "Language"
+  },
+  "login": {
+    "userName": "User Name",
+    "password": "Password",
+    "buttonText": "LogIn",
+    "fieldRequired": "This field is required"
+  },
   "lead":{
     "leadCreation": "Create Lead"
   },
@@ -7,6 +16,7 @@
   },
   "sidebar":{
     "home":"Home",
-    "statistics": "Statistics"
+    "statistics": "Statistics",
+    "users": "Users"
   }
 }

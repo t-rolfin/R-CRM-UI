@@ -1,7 +1,8 @@
 <ng-container >
-  <select (change)="setLanguage()" [value]="selectLanguage.toLowerCase()" name="selectLanguage" [(ngModel)]="selectLanguage" id="">
-    <ng-container *ngFor="let item of languages">
-      <option value="{{ item.toLowerCase() }}">{{item}}</option>
-    </ng-container>
-  </select>
+  <mat-form-field appearance="fill" class="w-100">
+    <mat-label>{{ 'app.languageLabel' | translate }}</mat-label>
+    <mat-select [value]="selectLanguage.toLowerCase()" (selectionChange)="setLanguage()" [(ngModel)]="selectLanguage">
+      <mat-option *ngFor="let item of languages" value="{{ item.toLowerCase() }}">{{ item }}</mat-option>
+    </mat-select>
+  </mat-form-field>
 </ng-container>

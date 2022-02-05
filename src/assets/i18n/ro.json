@@ -1,4 +1,13 @@
 {
+  "app":{
+    "languageLabel": "Limbă"
+  },
+  "login":{
+    "userName": "Nume Utilizator",
+    "password": "Parolă",
+    "buttonText": "LogIn",
+    "fieldRequired": "Acest câmp trebuie completat"
+  },
   "lead":{
     "leadCreation": "Adaugă Lead"
   },
@@ -7,6 +16,7 @@
   },
   "sidebar":{
     "home":"Acasă",
-    "statistics": "Statistici"
+    "statistics": "Statistici",
+    "users": "Utilizatori"
   }
 }
