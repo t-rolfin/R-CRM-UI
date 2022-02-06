@@ -25,6 +25,7 @@ import { BreadcrumbModule, BreadcrumbService } from 'xng-breadcrumb';
 import { TranslateModule } from '@ngx-translate/core';
 import { LocalizationComponent } from 'src/app/components/localization/localization.component';
 import { MatSelectModule } from '@angular/material/select'
+import { MatProgressBarModule } from '@angular/material/progress-bar'
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { MatSelectModule } from '@angular/material/select'
     TextareaAutosizeModule,
     TranslateModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatProgressBarModule
   ],
   providers: [
     BreadcrumbService

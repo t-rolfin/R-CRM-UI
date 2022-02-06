@@ -14,20 +14,26 @@
       </li>
 
       <li placement="right" ngbTooltip="{{ 'lead.leadCreation' | translate }}" >
-        <a routerLink="createlead" >
+        <a routerLink="/dashboard/createlead" >
           <i class="far fa-plus-square"></i>
         </a>
       </li>
 
       <li placement="right" ngbTooltip="Leads" >
-        <a routerLink="leads" >
+        <a routerLink="/dashboard/leads" >
           <i class="far fa-list-alt"></i>
         </a>
       </li>
 
       <li placement="right" ngbTooltip="{{'sidebar.statistics' | translate }}" >
-        <a routerLink="statistics" >
+        <a routerLink="/dashboard/statistics" >
           <i class="fas fa-chart-pie"></i>
+        </a>
+      </li>
+
+      <li placement="right" ngbTooltip="{{ 'sidebar.users' | translate }}" >
+        <a routerLink="/management">
+          <i class="fas fa-users"></i>
         </a>
       </li>
 

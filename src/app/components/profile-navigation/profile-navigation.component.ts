@@ -1,3 +1,4 @@
+import { LoaderService } from './../../services/loader-service.service';
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -16,7 +17,8 @@ export class ProfileNavigationComponent implements OnInit {
     public router: Router,
     @Inject(DOCUMENT) private doc: Document,
     private userService: UserService,
-    private accountService: AccountService
+    private accountService: AccountService,
+    public loader: LoaderService
     ) { }
 
   profileJson: CurrentUserModel = new CurrentUserModel();

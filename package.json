@@ -33,6 +33,7 @@
     "@ngx-translate/http-loader": "^7.0.0",
     "bootstrap": "^4.5.0",
     "guid-typescript": "^1.0.9",
+    "ngx-progressbar": "^2.0.0",
     "ngx-textarea-autosize": "^2.0.3",
     "ngx-webstorage-service": "^5.0.0",
     "rxjs": "~6.6.0",

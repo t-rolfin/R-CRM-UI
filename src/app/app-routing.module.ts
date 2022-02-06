@@ -4,7 +4,6 @@ import { AuthGuard } from './guards/AuthGuard';
 
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 import { HomeLayoutComponent } from './layouts/home-layout/home-layout.component';
-import { PresentationComponent } from './pages/presentation/presentation.component';
 
 const routes: Routes = [
   { path: '', component: HomeLayoutComponent,
@@ -22,6 +21,16 @@ const routes: Routes = [
         path: '',
         loadChildren: () => import('./layouts/auth-layout/auth-layout.module').then(m => m.AuthLayoutModule),
         data: { breadcrumb: { label: 'Dashboard ' }  }
+      }
+    ]
+  },
+  {
+    path: 'management', component: AuthLayoutComponent, canActivate: [AuthGuard],
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./layouts/management-layout/management-layout.module').then(m => m.ManagementLayoutModule),
+        data: { breadcrumb: { label: 'Management' } }
       }
     ]
   }

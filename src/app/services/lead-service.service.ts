@@ -1,7 +1,11 @@
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { SnackBarService } from './snackbar-service.service';
+import { BaseService } from './base-service.service';
+import { LoaderService } from './loader-service.service';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
+import { catchError, map, retry } from 'rxjs/operators';
 import { environment as env } from 'src/environments/environment';
 import { leadCreationModel } from '../models/leadCreationModel';
 import { Lead } from '../models/leadModel';
@@ -9,31 +13,24 @@ import { Lead } from '../models/leadModel';
 @Injectable({
   providedIn: 'root'
 })
-export class LeadService {
+export class LeadService extends BaseService {
 
-  constructor(public http: HttpClient) { }
+  constructor(
+    public http: HttpClient,
+    public notifications: SnackBarService,
+    ) {
+      super(notifications)
+  }
 
   public getAllLeads() : Observable<Lead[]>
   {
      return this.http.get<Lead[]>(`${env.apiUrl}/leads`)
-    .pipe(retry(3), catchError(this.processError));
+    .pipe(catchError(x => super.processError(x)));
   }
 
   public createLead(leadModel: leadCreationModel){
-    console.log(`${env.apiUrl}/leads/create`);
       this.http.post(`${env.apiUrl}/leads/create`, leadModel)
+      .pipe(catchError(x => super.processError(x)))
       .subscribe(x=> console.log(x));
   }
-
-  processError(err: any) {
-    let message = '';
-    if(err.error instanceof ErrorEvent) {
-     message = err.error.message;
-    } else {
-     message = `Error Code: ${err.status}\nMessage: ${err.message}`;
-    }
-    console.log(message);
-    return throwError(message);
- }
-
 }

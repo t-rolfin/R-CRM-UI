@@ -26,7 +26,6 @@ export class LeadsListComponent implements OnInit {
     this.leadService.getAllLeads()
     .subscribe(leads => {
       this.leads = leads;
-      console.log(leads);
     })
   }
 

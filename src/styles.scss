@@ -21,6 +21,14 @@
   }
 }
 
+.error{
+  background-color: #f44336;
+  color: white;
+  span{
+    font-size: .8rem;
+  }
+}
+
 html, body{
   margin: 0;
   padding: 0;
